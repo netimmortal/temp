@@ -12,9 +12,9 @@
 </head>
 <body>
     <!-- 调整SVG画布尺寸和视口以减少留白 -->
-    <svg width="400" height="600" viewBox="-200 -300 400 600">
+    <svg width="400" height="400" viewBox="-200 -200 400 400">
         <!-- 调整饼图位置并缩小尺寸 -->
-        <g transform="translate(100,150)">
+        <g transform="translate(100,100)">
             <!-- 饼图主体 -->
             <circle class="pieOuterCircle" r="120" fill="transparent" stroke="#ddd" stroke-width="2"/>
             
@@ -34,27 +34,27 @@
         </g>
 
         <!-- 标题居中 -->
-        <text class="pieTitleText" x="0" y="100">WSL配置步骤比例</text>
+        <text class="pieTitleText" x="0" y="-40">WSL配置步骤比例</text>
 
         <!-- 图例区域（右侧对齐） -->
-        <g transform="translate(150,150)">
-            <g class="legend" transform="translate(0,-50)">
+        <g transform="translate(220,0)">
+            <g class="legend" transform="translate(0,0)">
                 <rect width="18" height="18" fill="#ECECFF"/>
                 <text x="25" y="14">以管理员打开 PowerShell</text>
             </g>
-            <g class="legend" transform="translate(0,-25)">
+            <g class="legend" transform="translate(0,25)">
                 <rect width="18" height="18" fill="#ffffde"/>
                 <text x="25" y="14">启用虚拟机平台</text>
             </g>
-            <g class="legend" transform="translate(0,0)">
+            <g class="legend" transform="translate(0,50)">
                 <rect width="18" height="18" fill="hsl(80,100%,56%)"/>
                 <text x="25" y="14">启用Linux子系统</text>
             </g>
-            <g class="legend" transform="translate(0,25)">
+            <g class="legend" transform="translate(0,75)">
                 <rect width="18" height="18" fill="hsl(240,100%,86%)"/>
                 <text x="25" y="14">更新到WSL2内核</text>
             </g>
-            <g class="legend" transform="translate(0,50)">
+            <g class="legend" transform="translate(0,100)">
                 <rect width="18" height="18" fill="hsl(60,100%,64%)"/>
                 <text x="25" y="14">设置WSL2为默认版本</text>
             </g>
