@@ -4,26 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pie Chart</title>
-    <style>
-        svg {
-            border: 1px solid #ccc; /* 添加边框以便更好地查看SVG的边界 */
-        }
-    </style>
 </head>
 <body>
-    <svg width="300" height="300" viewBox="-250 -250 500 500">
-        <g transform="translate(125,125)">
-            <circle class="pieOuterCircle" r="180" cy="0" cx="0"></circle>
-            <path class="pieCircle" fill="#ECECFF" d="M1.1327982892113017e-14,-180A180,180,0,0,1,108.74027167410753,-149.66814395936527L0,0Z"></path>
-            <path class="pieCircle" fill="#ffffde" d="M108.74027167410753,-149.66814395936527A180,180,0,0,1,175.9454555146034,57.16814395936527L0,0Z"></path>
-            <path class="pieCircle" fill="hsl(80, 100%, 56.2745098039%)" d="M175.9454555146034,57.16814395936527A180,180,0,0,1,57.16814395936528,175.9454555146034L0,0Z"></path>
-            <path class="pieCircle" fill="hsl(240, 100%, 86.2745098039%)" d="M57.16814395936528,175.9454555146034A180,180,0,0,1,-175.9454555146034,57.16814395936529L0,0Z"></path>
-            <path class="pieCircle" fill="hsl(60, 100%, 63.5294117647%)" d="M-175.9454555146034,57.16814395936529A180,180,0,0,1,-3.398394867633905e-14,-180L0,0Z"></path>
-            <text style="text-anchor: middle;" class="slice" transform="translate(42.87610796952396,-131.95909163595255)">10%</text>
-            <text style="text-anchor: middle;" class="slice" transform="translate(131.95909163595255,-42.87610796952395)">20%</text>
-            <text style="text-anchor: middle;" class="slice" transform="translate(98.11106588963348,98.11106588963347)">15%</text>
-            <text style="text-anchor: middle;" class="slice" transform="translate(-62.991181838862104,123.62715523113604)">25%</text>
-            <text style="text-anchor: middle;" class="slice" transform="translate(-112.25110796952397,-81.55520375558064)">30%</text>
+    <svg width="400" height="400" viewBox="-200 -200 400 400">
+        <g transform="translate(100,100)">
+            <circle class="pieOuterCircle" r="186" cy="0" cx="0"></circle>
+            <path class="pieCircle" fill="#ECECFF" d="M0,-185 A185,185 0 0,1 108.74,-149.67 L0,0 Z"></path>
+            <path class="pieCircle" fill="#ffffde" d="M108.74,-149.67 A185,185 0 0,1 175.95,57.17 L0,0 Z"></path>
+            <path class="pieCircle" fill="hsl(80, 100%, 56.27%)" d="M175.95,57.17 A185,185 0 0,1 57.17,175.95 L0,0 Z"></path>
+            <path class="pieCircle" fill="hsl(240, 100%, 86.27%)" d="M57.17,175.95 A185,185 0 0,1 -175.95,57.17 L0,0 Z"></path>
+            <path class="pieCircle" fill="hsl(60, 100%, 63.53%)" d="M-175.95,57.17 A185,185 0 0,1 0,-185 L0,0 Z"></path>
+            <text style="text-anchor: middle;" class="slice" transform="translate(42.88,-131.96)">10%</text>
+            <text style="text-anchor: middle;" class="slice" transform="translate(131.96,-42.88)">20%</text>
+            <text style="text-anchor: middle;" class="slice" transform="translate(98.11,98.11)">15%</text>
+            <text style="text-anchor: middle;" class="slice" transform="translate(-62.99,123.63)">25%</text>
+            <text style="text-anchor: middle;" class="slice" transform="translate(-112.25,-81.56)">30%</text>
             <text class="pieTitleText" y="-200" x="0">各步骤所占比例</text>
             <g transform="translate(216,-55)" class="legend">
                 <rect style="fill: rgb(236, 236, 255); stroke: rgb(236, 236, 255);" height="18" width="18"></rect>
