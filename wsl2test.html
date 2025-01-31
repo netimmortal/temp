@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>优化饼图</title>
+    <title>正确的饼图</title>
     <style>
         .chart-container {
             width: 100%;
-            max-width: 300px; /* 限制最大宽度 */
+            max-width: 350px; /* 控制最大宽度 */
             height: auto; /* 让高度自适应 */
             display: flex;
             justify-content: center;
@@ -21,20 +21,28 @@
 </head>
 <body>
     <div class="chart-container">
-        <svg viewBox="-100 -100 200 200">
-            <g>
-                <circle r="90" fill="none" stroke="black"></circle>
-                <path fill="#ECECFF" d="M0,-90 A90,90 0 0,1 52.8,-72.1 L0,0 Z"></path>
-                <path fill="#ffffde" d="M52.8,-72.1 A90,90 0 0,1 84.2,27.3 L0,0 Z"></path>
-                <path fill="hsl(80, 100%, 56%)" d="M84.2,27.3 A90,90 0 0,1 27.3,84.2 L0,0 Z"></path>
-                <path fill="hsl(240, 100%, 86%)" d="M27.3,84.2 A90,90 0 0,1 -84.2,27.3 L0,0 Z"></path>
-                <path fill="hsl(60, 100%, 63%)" d="M-84.2,27.3 A90,90 0 0,1 0,-90 L0,0 Z"></path>
-                <text style="text-anchor: middle;" transform="translate(25,-60)">10%</text>
-                <text style="text-anchor: middle;" transform="translate(60,-25)">20%</text>
-                <text style="text-anchor: middle;" transform="translate(45,45)">15%</text>
-                <text style="text-anchor: middle;" transform="translate(-30,60)">25%</text>
-                <text style="text-anchor: middle;" transform="translate(-55,-40)">30%</text>
-                <text y="-95" x="0" style="text-anchor: middle; font-weight: bold;">各步骤所占比例</text>
+        <svg viewBox="-110 -110 220 220">
+            <g transform="rotate(-90)">
+                <!-- 30% - 黄色 -->
+                <path fill="yellow" d="M0,0 L100,0 A100,100 0 0,1 -50,86.6 Z"></path>
+                <!-- 25% - 蓝色 -->
+                <path fill="blue" d="M0,0 L-50,86.6 A100,100 0 0,1 -100,0 Z"></path>
+                <!-- 15% - 绿色 -->
+                <path fill="green" d="M0,0 L-100,0 A100,100 0 0,1 -86.6,-50 Z"></path>
+                <!-- 20% - 紫色 -->
+                <path fill="purple" d="M0,0 L-86.6,-50 A100,100 0 0,1 0,-100 Z"></path>
+                <!-- 10% - 橙色 -->
+                <path fill="orange" d="M0,0 L0,-100 A100,100 0 0,1 100,0 Z"></path>
+
+                <!-- 文字标注百分比 -->
+                <text x="-20" y="60" font-size="12" fill="black">30%</text>
+                <text x="-70" y="20" font-size="12" fill="white">25%</text>
+                <text x="-60" y="-30" font-size="12" fill="white">15%</text>
+                <text x="-10" y="-70" font-size="12" fill="white">20%</text>
+                <text x="50" y="-10" font-size="12" fill="black">10%</text>
+
+                <!-- 标题 -->
+                <text x="0" y="-110" text-anchor="middle" font-size="14" font-weight="bold">各步骤所占比例</text>
             </g>
         </svg>
     </div>
