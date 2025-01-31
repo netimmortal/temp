@@ -1,60 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pie Chart</title>
+    <title>优化饼图</title>
     <style>
-        /* 让容器自适应大小 */
-        svg {
-            width: 100%;
-            height: 100%;
-        }
-        /* 设定容器大小，比如父元素是div，svg会自适应 */
         .chart-container {
             width: 100%;
-            max-width: 500px;  /* 可以限制最大宽度 */
-            height: 500px;     /* 设定固定高度 */
-            margin: auto;      /* 居中对齐 */
+            max-width: 300px; /* 限制最大宽度 */
+            height: auto; /* 让高度自适应 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        svg {
+            width: 100%;
+            height: auto;
         }
     </style>
 </head>
 <body>
     <div class="chart-container">
-        <svg viewBox="-200 -200 400 400">
-            <g transform="translate(100,100)">
-                <circle class="pieOuterCircle" r="186" cy="0" cx="0"></circle>
-                <path class="pieCircle" fill="#ECECFF" d="M0,-185 A185,185 0 0,1 108.74,-149.67 L0,0 Z"></path>
-                <path class="pieCircle" fill="#ffffde" d="M108.74,-149.67 A185,185 0 0,1 175.95,57.17 L0,0 Z"></path>
-                <path class="pieCircle" fill="hsl(80, 100%, 56.27%)" d="M175.95,57.17 A185,185 0 0,1 57.17,175.95 L0,0 Z"></path>
-                <path class="pieCircle" fill="hsl(240, 100%, 86.27%)" d="M57.17,175.95 A185,185 0 0,1 -175.95,57.17 L0,0 Z"></path>
-                <path class="pieCircle" fill="hsl(60, 100%, 63.53%)" d="M-175.95,57.17 A185,185 0 0,1 0,-185 L0,0 Z"></path>
-                <text style="text-anchor: middle;" class="slice" transform="translate(42.88,-131.96)">10%</text>
-                <text style="text-anchor: middle;" class="slice" transform="translate(131.96,-42.88)">20%</text>
-                <text style="text-anchor: middle;" class="slice" transform="translate(98.11,98.11)">15%</text>
-                <text style="text-anchor: middle;" class="slice" transform="translate(-62.99,123.63)">25%</text>
-                <text style="text-anchor: middle;" class="slice" transform="translate(-112.25,-81.56)">30%</text>
-                <text class="pieTitleText" y="-200" x="0">各步骤所占比例</text>
-                <g transform="translate(216,-55)" class="legend">
-                    <rect style="fill: rgb(236, 236, 255); stroke: rgb(236, 236, 255);" height="18" width="18"></rect>
-                    <text y="14" x="22">打开 PowerShell 作为管理员</text>
-                </g>
-                <g transform="translate(216,-33)" class="legend">
-                    <rect style="fill: rgb(255, 255, 222); stroke: rgb(255, 255, 222);" height="18" width="18"></rect>
-                    <text y="14" x="22">启用“虚拟机平台”可选组件</text>
-                </g>
-                <g transform="translate(216,-11)" class="legend">
-                    <rect style="fill: rgb(181, 255, 32); stroke: rgb(181, 255, 32);" height="18" width="18"></rect>
-                    <text y="14" x="22">启用“适用于 Linux 的 Windows 子系统”可选组件</text>
-                </g>
-                <g transform="translate(216,11)" class="legend">
-                    <rect style="fill: rgb(185, 185, 255); stroke: rgb(185, 185, 255);" height="18" width="18"></rect>
-                    <text y="14" x="22">更新到 WSL 2</text>
-                </g>
-                <g transform="translate(216,33)" class="legend">
-                    <rect style="fill: rgb(255, 255, 69); stroke: rgb(255, 255, 69);" height="18" width="18"></rect>
-                    <text y="14" x="22">将 WSL 2 设置为默认版本</text>
-                </g>
+        <svg viewBox="-100 -100 200 200">
+            <g>
+                <circle r="90" fill="none" stroke="black"></circle>
+                <path fill="#ECECFF" d="M0,-90 A90,90 0 0,1 52.8,-72.1 L0,0 Z"></path>
+                <path fill="#ffffde" d="M52.8,-72.1 A90,90 0 0,1 84.2,27.3 L0,0 Z"></path>
+                <path fill="hsl(80, 100%, 56%)" d="M84.2,27.3 A90,90 0 0,1 27.3,84.2 L0,0 Z"></path>
+                <path fill="hsl(240, 100%, 86%)" d="M27.3,84.2 A90,90 0 0,1 -84.2,27.3 L0,0 Z"></path>
+                <path fill="hsl(60, 100%, 63%)" d="M-84.2,27.3 A90,90 0 0,1 0,-90 L0,0 Z"></path>
+                <text style="text-anchor: middle;" transform="translate(25,-60)">10%</text>
+                <text style="text-anchor: middle;" transform="translate(60,-25)">20%</text>
+                <text style="text-anchor: middle;" transform="translate(45,45)">15%</text>
+                <text style="text-anchor: middle;" transform="translate(-30,60)">25%</text>
+                <text style="text-anchor: middle;" transform="translate(-55,-40)">30%</text>
+                <text y="-95" x="0" style="text-anchor: middle; font-weight: bold;">各步骤所占比例</text>
             </g>
         </svg>
     </div>
