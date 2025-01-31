@@ -7,8 +7,8 @@
     <style>
         .chart-container {
             width: 100%;
-            max-width: 350px; /* 控制最大宽度 */
-            height: auto; /* 让高度自适应 */
+            max-width: 350px;
+            height: auto;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -21,7 +21,7 @@
 </head>
 <body>
     <div class="chart-container">
-        <svg viewBox="-110 -110 220 220">
+        <svg viewBox="-120 -120 240 240">
             <g transform="rotate(-90)">
                 <!-- 30% - 黄色 -->
                 <path fill="yellow" d="M0,0 L100,0 A100,100 0 0,1 -50,86.6 Z"></path>
@@ -34,15 +34,15 @@
                 <!-- 10% - 橙色 -->
                 <path fill="orange" d="M0,0 L0,-100 A100,100 0 0,1 100,0 Z"></path>
 
-                <!-- 文字标注百分比 -->
-                <text x="-20" y="60" font-size="12" fill="black">30%</text>
-                <text x="-70" y="20" font-size="12" fill="white">25%</text>
-                <text x="-60" y="-30" font-size="12" fill="white">15%</text>
-                <text x="-10" y="-70" font-size="12" fill="white">20%</text>
-                <text x="50" y="-10" font-size="12" fill="black">10%</text>
+                <!-- 百分比文字 -->
+                <text x="-20" y="50" font-size="14" fill="black" font-weight="bold">30%</text>
+                <text x="-65" y="15" font-size="14" fill="white" font-weight="bold">25%</text>
+                <text x="-55" y="-25" font-size="14" fill="white" font-weight="bold">15%</text>
+                <text x="-10" y="-60" font-size="14" fill="white" font-weight="bold">20%</text>
+                <text x="40" y="-10" font-size="14" fill="black" font-weight="bold">10%</text>
 
                 <!-- 标题 -->
-                <text x="0" y="-110" text-anchor="middle" font-size="14" font-weight="bold">各步骤所占比例</text>
+                <text x="0" y="-110" text-anchor="middle" font-size="16" font-weight="bold" fill="black">各步骤所占比例</text>
             </g>
         </svg>
     </div>
