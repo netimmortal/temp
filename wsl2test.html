@@ -6,15 +6,15 @@
     <title>WSL配置步骤比例图</title>
     <style>
         .legend text { font-size: 12px; }
-        .pieTitleText { font-size: 16px; font-weight: bold; }
+        .pieTitleText { font-size: 16px; font-weight: bold; text-anchor: middle; }
         .slice { font-size: 12px; fill: #333; }
     </style>
 </head>
 <body>
     <!-- 调整SVG画布尺寸和视口以减少留白 -->
-    <svg width="400" height="400" viewBox="-160 -160 320 320">
+    <svg width="400" height="600" viewBox="-200 -300 400 600">
         <!-- 调整饼图位置并缩小尺寸 -->
-        <g transform="translate(80,80)">
+        <g transform="translate(100,150)">
             <!-- 饼图主体 -->
             <circle class="pieOuterCircle" r="120" fill="transparent" stroke="#ddd" stroke-width="2"/>
             
@@ -31,30 +31,30 @@
             <text transform="translate(60,60)" class="slice">20%</text>
             <text transform="translate(-40,90)" class="slice">15%</text>
             <text transform="translate(-70,-55)" class="slice">10%</text>
-
-            <!-- 标题居中 -->
-            <text class="pieTitleText" x="0" y="-140">WSL配置步骤比例</text>
         </g>
 
+        <!-- 标题居中 -->
+        <text class="pieTitleText" x="0" y="100">WSL配置步骤比例</text>
+
         <!-- 图例区域（右侧对齐） -->
-        <g transform="translate(200,0)">
-            <g class="legend">
+        <g transform="translate(150,150)">
+            <g class="legend" transform="translate(0,-50)">
                 <rect width="18" height="18" fill="#ECECFF"/>
                 <text x="25" y="14">以管理员打开 PowerShell</text>
             </g>
-            <g class="legend" transform="translate(0,25)">
+            <g class="legend" transform="translate(0,-25)">
                 <rect width="18" height="18" fill="#ffffde"/>
                 <text x="25" y="14">启用虚拟机平台</text>
             </g>
-            <g class="legend" transform="translate(0,50)">
+            <g class="legend" transform="translate(0,0)">
                 <rect width="18" height="18" fill="hsl(80,100%,56%)"/>
                 <text x="25" y="14">启用Linux子系统</text>
             </g>
-            <g class="legend" transform="translate(0,75)">
+            <g class="legend" transform="translate(0,25)">
                 <rect width="18" height="18" fill="hsl(240,100%,86%)"/>
                 <text x="25" y="14">更新到WSL2内核</text>
             </g>
-            <g class="legend" transform="translate(0,100)">
+            <g class="legend" transform="translate(0,50)">
                 <rect width="18" height="18" fill="hsl(60,100%,64%)"/>
                 <text x="25" y="14">设置WSL2为默认版本</text>
             </g>
