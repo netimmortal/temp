@@ -3,42 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pie Chart</title>
+    <title>WSL配置步骤比例图</title>
+    <style>
+        .legend text { font-size: 12px; }
+        .pieTitleText { font-size: 16px; font-weight: bold; }
+        .slice { font-size: 12px; fill: #333; }
+    </style>
 </head>
 <body>
-    <svg width="400" height="400" viewBox="-200 -200 400 400">
-        <g transform="translate(100,100)">
-            <circle class="pieOuterCircle" r="186" cy="0" cx="0"></circle>
-            <path class="pieCircle" fill="#ECECFF" d="M0,-185 A185,185 0 0,1 108.74,-149.67 L0,0 Z"></path>
-            <path class="pieCircle" fill="#ffffde" d="M108.74,-149.67 A185,185 0 0,1 175.95,57.17 L0,0 Z"></path>
-            <path class="pieCircle" fill="hsl(80, 100%, 56.27%)" d="M175.95,57.17 A185,185 0 0,1 57.17,175.95 L0,0 Z"></path>
-            <path class="pieCircle" fill="hsl(240, 100%, 86.27%)" d="M57.17,175.95 A185,185 0 0,1 -175.95,57.17 L0,0 Z"></path>
-            <path class="pieCircle" fill="hsl(60, 100%, 63.53%)" d="M-175.95,57.17 A185,185 0 0,1 0,-185 L0,0 Z"></path>
-            <text style="text-anchor: middle;" class="slice" transform="translate(42.88,-131.96)">10%</text>
-            <text style="text-anchor: middle;" class="slice" transform="translate(131.96,-42.88)">20%</text>
-            <text style="text-anchor: middle;" class="slice" transform="translate(98.11,98.11)">15%</text>
-            <text style="text-anchor: middle;" class="slice" transform="translate(-62.99,123.63)">25%</text>
-            <text style="text-anchor: middle;" class="slice" transform="translate(-112.25,-81.56)">30%</text>
-            <text class="pieTitleText" y="-200" x="0">各步骤所占比例</text>
-            <g transform="translate(216,-55)" class="legend">
-                <rect style="fill: rgb(236, 236, 255); stroke: rgb(236, 236, 255);" height="18" width="18"></rect>
-                <text y="14" x="22">打开 PowerShell 作为管理员</text>
+    <!-- 扩大SVG画布尺寸并调整视口 -->
+    <svg width="800" height="500" viewBox="-250 -200 800 500">
+        <!-- 调整饼图位置并缩小尺寸 -->
+        <g transform="translate(200,150)">
+            <!-- 饼图主体 -->
+            <circle class="pieOuterCircle" r="150" fill="transparent" stroke="#ddd" stroke-width="2"/>
+            
+            <!-- 各扇形区（根据比例调整路径） -->
+            <path fill="#ECECFF" d="M0,-150 A150,150 0 0,1 88.2,-121.3 L0,0 Z"/>         <!-- 30% -->
+            <path fill="#ffffde" d="M88.2,-121.3 A150,150 0 0,1 142.7,46.3 L0,0 Z"/>      <!-- 25% -->
+            <path fill="hsl(80,100%,56%)" d="M142.7,46.3 A150,150 0 0,1 46.3,142.7 L0,0 Z"/> <!-- 20% -->
+            <path fill="hsl(240,100%,86%)" d="M46.3,142.7 A150,150 0 0,1 -142.7,46.3 L0,0 Z"/><!-- 15% -->
+            <path fill="hsl(60,100%,64%)" d="M-142.7,46.3 A150,150 0 0,1 0,-150 L0,0 Z"/> <!-- 10% -->
+
+            <!-- 百分比标签（重新定位） -->
+            <text transform="translate(35,-107)" class="slice">30%</text>
+            <text transform="translate(107,-35)" class="slice">25%</text>
+            <text transform="translate(80,80)" class="slice">20%</text>
+            <text transform="translate(-50,100)" class="slice">15%</text>
+            <text transform="translate(-90,-65)" class="slice">10%</text>
+
+            <!-- 标题居中 -->
+            <text class="pieTitleText" x="0" y="-180">WSL配置步骤比例</text>
+        </g>
+
+        <!-- 图例区域（右侧对齐） -->
+        <g transform="translate(380,-50)">
+            <g class="legend">
+                <rect width="18" height="18" fill="#ECECFF"/>
+                <text x="25" y="14">以管理员打开 PowerShell</text>
             </g>
-            <g transform="translate(216,-33)" class="legend">
-                <rect style="fill: rgb(255, 255, 222); stroke: rgb(255, 255, 222);" height="18" width="18"></rect>
-                <text y="14" x="22">启用“虚拟机平台”可选组件</text>
+            <g class="legend" transform="translate(0,25)">
+                <rect width="18" height="18" fill="#ffffde"/>
+                <text x="25" y="14">启用虚拟机平台</text>
             </g>
-            <g transform="translate(216,-11)" class="legend">
-                <rect style="fill: rgb(181, 255, 32); stroke: rgb(181, 255, 32);" height="18" width="18"></rect>
-                <text y="14" x="22">启用“适用于 Linux 的 Windows 子系统”可选组件</text>
+            <g class="legend" transform="translate(0,50)">
+                <rect width="18" height="18" fill="hsl(80,100%,56%)"/>
+                <text x="25" y="14">启用Linux子系统</text>
             </g>
-            <g transform="translate(216,11)" class="legend">
-                <rect style="fill: rgb(185, 185, 255); stroke: rgb(185, 185, 255);" height="18" width="18"></rect>
-                <text y="14" x="22">更新到 WSL 2</text>
+            <g class="legend" transform="translate(0,75)">
+                <rect width="18" height="18" fill="hsl(240,100%,86%)"/>
+                <text x="25" y="14">更新到WSL2内核</text>
             </g>
-            <g transform="translate(216,33)" class="legend">
-                <rect style="fill: rgb(255, 255, 69); stroke: rgb(255, 255, 69);" height="18" width="18"></rect>
-                <text y="14" x="22">将 WSL 2 设置为默认版本</text>
+            <g class="legend" transform="translate(0,100)">
+                <rect width="18" height="18" fill="hsl(60,100%,64%)"/>
+                <text x="25" y="14">设置WSL2为默认版本</text>
             </g>
         </g>
     </svg>
